@@ -41,6 +41,7 @@ app.get("/watchlist/:id", async (req, res) => {
 
 
     res.json(movie.rows[0]);
+    //console.log(movie);
   } catch (err) {
     console.error(err.message)
   }
@@ -56,6 +57,7 @@ app.put("/watchlist/:id", async (req, res) => {
     const updateMovie = await pool.query("UPDATE movie SET description = $1 WHERE movie_id = $2", [description, id]);
 
     res.json(" Movie Updated !")
+    //console.log(updateMovie)
   } catch (err) {
     console.error(err.message)
   }
